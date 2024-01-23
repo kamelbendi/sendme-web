@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { MainContext } from './store/MainContext';
+import { getCookie } from './helpers/UserSignedIn';
+import View from './components/views/Views';
+import english from './languages/English.js';
+import { LOCAL_STORAGE_NAME } from './store/user-details';
 
 function App() {
+  const userDetails = localStorage.getItem(LOCAL_STORAGE_NAME);
+  const [mainState, setMainState] = React.useState({
+    languageCode: 'en',
+    language: english,
+    isLoggedIn: Boolean(getCookie()),
+    dir: 'rtl',
+    userDetails: userDetails ? JSON.parse(userDetails) : {
+      address: '',
+      city: '',
+      country: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      phone: '',
+      token: '',
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContext.Provider value={{ mainState, setMainState }}>
+      <BrowserRouter>
+        <View />
+      </BrowserRouter>
+    </MainContext.Provider>
   );
 }
 
