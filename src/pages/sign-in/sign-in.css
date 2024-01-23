@@ -1,0 +1,70 @@
+.left-banner{
+    background-color: rgb(25, 22, 69);
+    width: 20%;
+    height: 100vh;
+    display: table;
+}
+
+.sign-in{
+    display: flex;
+    height: 100vh;
+}
+
+.right-space{
+    width: 80%;
+    background-color: #fff;
+    justify-content: right;
+    height: 100%;
+}
+
+.sign-in-banner{
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0 15px 25px;
+}
+
+.sign-up-banner {
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0 15px 25px;
+}
+
+.sign-in-banner:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+.sign-up-banner:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+.wrapper-button{
+    display: table-cell;
+    vertical-align: middle
+}
+
+.go-menu{
+    float: left;
+    margin-left: 30px;
+}
+
+.sign-in-box{
+    margin-top: 35vh;
+    display: table-caption;
+    margin-right: 32vw;
+    border: rgb(25, 22, 69) solid 0.8px;
+    border-radius: 2px;
+    padding: 0 20px 0 20px;
+}
+
+input{
+    margin: 10px;
+    text-align: left;
+}
+
+.title{
+    display: flex;
+    justify-content: end;
+}
